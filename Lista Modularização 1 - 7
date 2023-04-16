@@ -1,0 +1,222 @@
+/******************************************************************************
+
+Vinicius Santos Vilela
+
+1. Escreva um programa que implemente uma função que retorne a diferença entre 
+dois números inteiros digitados pelo usuário.  
+
+*******************************************************************************/
+#include<stdio.h>
+
+int diferenca(int a , int b){
+    
+    if(a>=b){
+        return a-b;
+    }else{
+        return b-a;
+    }
+}
+
+int main(){
+    
+    int a,b;
+    
+    scanf("%d%d",&a,&b);
+    printf("%d",diferenca(a,b));
+}
+
+
+
+/******************************************************************************
+
+Vinicius Santos Vilela
+
+2. Escreva uma função que retorne a divisão entre dois números inteiros. 
+Atenção para a questão da divisão por zero! A divisão não pode ocorrer se o divisor for zero.  
+
+*******************************************************************************/
+#include <stdio.h>
+
+float divisao(float a, float b){
+    return a/b;
+}
+
+int main(){
+    float a,b;
+    
+    scanf("%f%f",&a,&b);
+    while(b==0){
+        scanf("%f",&b);
+    }
+    printf("%.2f",divisao(a,b));
+}
+
+
+/******************************************************************************
+
+Vinicius Santos Vilela
+
+3. Escreva um programa que calcule a área de um círculo a partir de uma função
+especialmente desenhada para isso; essa função recebe o valor do raio e retorna a área do círculo.  
+
+*******************************************************************************/
+#include <stdio.h>
+
+float area(float r){
+    return r*r*3.14;
+}
+
+int main(){
+    float r;
+    scanf("%f",&r);
+    printf("%.2f",area(r));
+}
+
+
+
+/******************************************************************************
+
+Vinicius Santos Vilela
+
+4. Crie um sistema de caixa eletrônico, utilizando menus (switch) e outros recursos,
+que realizem operações financeiras a partir de funções especificamente projetadas
+para tal. Lembre-se de que o caixa eletrônico é um programa que roda como repetição contínua,
+até que o usuário decida encerrar as operações. Operações: Depósito, Saque e Saldo.  
+
+*******************************************************************************/
+#include<stdio.h>
+
+float saque(float valor, float saldo){
+    return saldo-valor;
+}
+float deposito(float valor, float saldo){
+    return saldo+valor;
+}
+
+int main(){
+    int modo=0;
+    float saldo=0,valor;
+    
+    while(modo!=4){
+        printf("\n\n1 - Saque\n\n2 - Deposito\n\n3 - Saldo\n\n4 - Sair\n\n");
+        scanf("%d",&modo);
+    
+    switch(modo){
+        
+        case(1):
+        
+        scanf("%f",&valor);
+        if(valor<=saldo){
+            saldo = saque(valor,saldo);
+            printf("Operação Realizada com  sucesso");
+        }else{
+            printf("\n\nSaldo insulficiente");
+        }
+        break;
+        
+        case(2):
+        
+        scanf("%f",&valor);
+        saldo=deposito(valor,saldo);
+        printf("Operação Realizada com  sucesso");
+        
+        break;
+        
+        case(3):
+        
+            printf("%.2f",saldo);
+            
+        break;    
+            
+        case(4):
+        
+            printf("\n\nObrigado!!!");
+        break;
+            
+        default:
+            printf("\n\nOperação Invalida");
+        break;
+        
+        
+        
+    }
+    
+    }}
+
+
+/******************************************************************************
+
+Vinicius Santos Vilela
+
+5. Crie uma função que determine se dado caracter está entre ‘a’ e ‘z’. Dica: Use a tabela ASCII.  
+
+*******************************************************************************/
+#include<stdio.h>
+
+int caracter(char letra){
+    if(letra>='a'&& letra<='z'){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+int main(){
+    char letra;
+    
+    scanf("%c",&letra);
+    if(caracter(letra)){
+        printf("Esta");
+    }else{
+        printf("Não Esta");
+    }
+}
+
+
+
+/******************************************************************************
+
+Vinicius Santos Vilela
+
+6. Escreva um programa que implemente uma função que passe dado número inteiro
+como parâmetro, e este desenhe um número equivalente a “*” na tela.  
+
+*******************************************************************************/
+#include <stdio.h>
+
+int repete(int a){
+    int i;
+    for(i=1;i<=a;i++){
+        printf("*");
+    }
+}
+
+int main(){
+    int a;
+    
+    scanf("%d",&a);
+    repete(a);
+}
+
+
+
+/******************************************************************************
+
+Vinicius Santos Vilela
+
+7. Escreva uma função que retorne o cubo do valor passado como argumento.
+
+*******************************************************************************/
+#include<stdio.h>
+
+float cubo(float a){
+    return a*a*a;
+}
+
+int main(){
+    float a;
+    
+    scanf("%f",&a);
+    printf("%.2f",cubo(a));
+}
+
