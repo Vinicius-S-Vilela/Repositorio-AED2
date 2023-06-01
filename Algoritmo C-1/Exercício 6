@@ -1,0 +1,30 @@
+/******************************************************************************
+
+Vinicius Santos Vilela - 	2AN	- 	15/02/2023
+Exercicio 1
+    Implemente um programa que leia 3 números inteiros e informe em qual posição se encontra o maior dentre
+eles. Exemplo: se os números lidos forem 10, 30, 14 a saída deve ser: posição 2.
+
+
+*******************************************************************************/
+
+
+
+#include <stdio.h>
+
+int main() {
+    int num1, num2, num3;
+
+    printf("Digite três números inteiros: ");
+    scanf("%d %d %d", &num1, &num2, &num3);
+
+    if (num1 >= num2 && num1 >= num3) {
+        printf("Posição 1\n");
+    } else if (num2 >= num3) {
+        printf("Posição 2\n");
+    } else {
+        printf("Posição 3\n");
+    }
+
+    return 0;
+}
