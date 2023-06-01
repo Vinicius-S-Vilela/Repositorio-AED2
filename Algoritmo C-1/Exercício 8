@@ -1,0 +1,32 @@
+/******************************************************************************
+
+Vinicius Santos Vilela - 	2AN	- 	15/02/2023
+Exercicio 8
+    Ler 2 valores, calcular e escrever a soma dos inteiros existentes entre os 2 valores lidos (incluindo os valores
+lidos na soma).
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main() {
+    int valor1, valor2, soma = 0;
+    
+    printf("Digite o primeiro valor: ");
+    scanf("%d", &valor1);
+    
+    printf("Digite o segundo valor: ");
+    scanf("%d", &valor2);
+    
+    
+    int menor = (valor1<valor2) ? valor1 : valor2;
+    
+    int maior = (valor1>valor2) ? valor1 : valor2;
+    
+    
+    for (int i = menor; i <= maior; i++) {
+        soma += i;
+    }
+        printf("A soma dos inteiros entre %d e %d (incluindo-os) é: %d\n", valor1, valor2, soma);
+    
+    return 0;
+}
