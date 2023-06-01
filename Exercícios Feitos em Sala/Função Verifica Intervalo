@@ -1,0 +1,30 @@
+/******************************************************************************
+Vinicius Santos Vilela - 	2AN	- 	23/02/2023
+
+Implementar a função verificaIntervalo com e sem if
+    
+*******************************************************************************/
+#include <stdio.h>
+
+int verificaIntervalo (int x, int min, int max) {
+   
+    return (x>= min && x<= max);
+}
+
+int main()
+{
+    int x, min, max;
+    printf("Digite x: ");   scanf ("%d", &x);
+    printf("Digite min: "); scanf ("%d", &min);
+    printf("Digite max: "); scanf ("%d", &max);
+    while ( min > max){
+        scanf("%d",&max);
+    }
+
+    if (verificaIntervalo (x,min,max))
+        printf ("\nEstá no intervalo");
+    else 
+        printf ("\nNAO Está no intervalo");
+    
+    return 0;
+}
