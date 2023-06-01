@@ -1,0 +1,50 @@
+/******************************************************************************
+
+Vinicius Santos Vilela - 	2AN	- 	08/03/2023
+
+EXERCÍCIO 2
+ Faça um programa que leia um vetor
+ de 8 posições e, em seguida, leia
+ também dois valores X e Y quaisquer
+ correspondentes a duas posições no 
+ vetor. Ao final seu programa deverá
+ escrever a soma dos valores encontrados
+ nas respectivas posições X e Y.
+
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+#define TAM 8
+int main(){
+	setlocale(LC_ALL, "portuguese");
+	int array[TAM], i;
+	int x, y, a=0, b=0, s=0;
+	printf("Insira os 8 valores:\n");
+	for(i=0;i<TAM;i++){
+		printf("Insira vetor[%d] numero: ",i+1); scanf("%d", &array[i]);
+	}
+	printf("\nInsira a posição em que deseja selecionar o primeiro numero: ");
+	scanf("%d", &x);
+	while(x<0||x>TAM){
+		printf("Valor invalido! Tente novamente:");
+		scanf("%d", &x);
+	}
+	printf("\nInsira a posição em que deseja selecionar o segundo numero: "); 
+	scanf("%d", &y);
+	while(y<0||y>TAM){
+		printf("Valor invalido! Tente novamente:");
+		scanf("%d", &y);
+	}
+	for(i=0;i<TAM;i++){
+		if(i==(x-1)){
+			a=array[i];
+		}
+		else if(i==(y-1)){
+			b=array[i];
+		}
+	}
+	s = a+b;
+	printf("\nA soma dos valores das posiçoes %d e %d = %d", x, y, s);
+	
+	return 0;
+}
