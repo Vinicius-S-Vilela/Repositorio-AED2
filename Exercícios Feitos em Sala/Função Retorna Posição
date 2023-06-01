@@ -1,0 +1,36 @@
+/******************************************************************************
+Vinicius Santos Vilela - 	2AN	- 	23/02/2023
+
+Exercicio 3 -  Implementar e testar a função retornaPosicao
+    
+*******************************************************************************/
+
+#include <stdio.h>
+int posMaior(int x, int y , int z);
+
+int main(){
+	
+	int x, y, z;
+	printf ("Digite o primeiro numero : \n");
+	scanf("%d", &x);
+	
+	printf ("\nDigite o segundo numero : \n");
+	scanf("%d", &y);
+	
+	printf ("Digite o terceiro numero : \n");
+	scanf("%d", &z);
+	
+	printf("\nO maior numero com maior valor esta na posicao %d", posMaior(x, y, z));
+
+	return 0;
+}
+
+int posMaior(int x, int y, int z){
+    int posi=1;
+	if(y>x && y>z)
+		posi=2;
+	if(z>x && z>y)
+	    posi=3;
+    return posi;
+	
+}
