@@ -1,0 +1,31 @@
+/******************************************************************************
+
+Vinicius Santos Vilela - 	2AN	- 	15/02/2023
+Exercicio 5
+    Ler o salário fixo e o valor das vendas efetuadas pelo vendedor de uma empresa. Sabendo-se que ele recebe
+uma comissão de 3% sobre o total das vendas até R $1.500,00 mais 5% sobre o que ultrapassar este valor,
+calcular e escrever o seu salário total.
+
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main() {
+    float salario_ vendas, comissao, total;
+    printf("Digite o salário fixo: R$ ");
+    scanf("%f", &salario;
+    printf("Digite o valor das vendas efetuadas: R$ ");
+    scanf("%f", &vendas);
+    if (vendas <= 1500) {
+        comissao = vendas * 0.03;
+    } else {
+        comissao = 1500 * 0.03 + (vendas - 1500) * 0.05;
+    }
+
+    total = salario + comissao;
+
+    printf("O salário total do vendedor é: R$ %.2f\n", total);
+
+    return 0;
+}
