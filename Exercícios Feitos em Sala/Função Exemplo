@@ -1,0 +1,17 @@
+/******************************************************************************
+Vinicius Santos Vilela - 	2AN	- 	23/02/2023
+
+Função para multiplicar valor por 2
+    
+*******************************************************************************/
+
+#include <stdio.h>
+int funcaoExemplo ( int a) {
+    a = (a) * 2;
+    return a;
+}
+int main ( ) {
+    int a = 5, resultado;
+    resultado = funcaoExemplo (a);
+    printf ("a = %d", resultado);
+}
