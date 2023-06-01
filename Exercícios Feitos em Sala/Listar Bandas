@@ -1,0 +1,161 @@
+/******************************************************************************
+Vinicius Santos Vilela - 	2AN	- 	10/05/2023
+
+Função para listar bandas por nome, numero de integratnes ou estilo
+    
+*******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+#define TAMANHO 100   
+
+typedef struct {            //define struct para banda
+    char nome[20];
+    char estilo[20];
+    int tamanho;
+    int rank;
+} BANDA;
+
+int leBanda (BANDA *v, int qt) {        //Cadastrada banda desejada
+  for(int i=0;i<qt;i++) {               //Faz laço conforme quantidade digitada pelo usuario
+        printf("\nDigite o nome: ");
+        scanf("%s",v[i].nome);
+        printf("Digite o estilo: ");
+        scanf("%s",v[i].estilo);
+        printf("Digite a quantidade de integrantes: ");
+        scanf("%d",&v[i].tamanho);
+        printf("Digite a classificação: ");
+        scanf("%d",&v[i].rank);
+        
+    }
+    return qt;
+}
+
+void listarTodas (BANDA *exib, int qt) {        //Mostra todas as bandas cadastradas
+   for(int i=0;i<qt;i++) {                      //Faz laço conforme quantidade digitada pelo usuario
+       printf("\nNome: %s", exib[i].nome);
+       printf("\nEstilo: %s", exib[i].estilo);
+       printf("\nIntegrantes: %d", exib[i].tamanho);
+       printf("\nRank: %d\n", exib[i].rank);
+    }   
+}
+
+void buscaPorNome (BANDA *busca, int qt) {          //Encontra banda pelo nome digitado pelo usuario
+    char aux[20];
+    int achou=0;
+    printf("\nInforme o nome da banda a buscar: ");
+    scanf ("%s", aux);
+        for(int i=0;i<qt;i++) {                     //Faz laço conforme quantidade digitada pelo usuario
+            if(strcmp(aux,busca[i].nome)==0){       //Compara valor digitado com valor inserido na lista de bandas
+                achou =1;
+                printf("\nNome: %s", busca[i].nome);
+                printf("\nEstilo: %s", busca[i].estilo);
+                printf("\nIntegrantes: %d", busca[i].tamanho);
+                printf("\nRank: %d\n", busca[i].rank);
+        }   }
+        if (achou==0)
+            printf("\nBanda não encontrada");       //Mostra mensagem caso o valor digitado pelo usuario não seja encontrado no laço
+}
+   
+void buscaPorEstilo (BANDA *busca, int qt) {        //Encontra banda pelo estilo digitado pelo usuario
+    char aux[20];
+    int achou=0;
+    printf("\nInforme o nome do estilo a buscar: ");
+    scanf ("%s", aux);
+        for(int i=0;i<qt;i++) {                     //Faz laço conforme quantidade digitada pelo usuario
+            if(strcmp(aux,busca[i].estilo)==0){     //Compara valor digitado com valor inserido na lista de bandas
+               achou =1; 
+               printf("\nNome: %s", busca[i].nome);
+               printf("\nEstilo: %s", busca[i].estilo);
+               printf("\nIntegrantes: %d", busca[i].tamanho);
+               printf("\nRank: %d\n", busca[i].rank);
+        }   }
+        if (achou==0)
+            printf("\nEstilo não encontrado");      //Mostra mensagem caso o valor digitado pelo usuario não seja encontrado no laço
+}
+
+void buscaPorTamanho (BANDA *busca, int qt) {       //Encontra banda pelo numero de integrantes digitado pelo usuario
+    int aux;
+    int achou=0;
+    printf("\nInforme o numero de integrantes a buscar: ");
+    scanf ("%d", &aux);
+        for(int i=0;i<qt;i++) {                     //Faz laço conforme quantidade digitada pelo usuario
+            if(aux==busca[i].tamanho){              //Compara valor digitado com valor inserido na lista de bandas
+                achou =1;                           
+                printf("\nNome: %s", busca[i].nome);
+                printf("\nEstilo: %s", busca[i].estilo);
+                printf("\nIntegrantes: %d", busca[i].tamanho);
+                printf("\nRank: %d\n", busca[i].rank);
+        }   }
+        if (achou==0)
+            printf("\nNumero de integrantes não encontrado");       //Mostra mensagem caso o valor digitado pelo usuario não seja encontrado no laço
+}
+   
+void buscaPorRank (BANDA *busca, int qt) {          //Encontra banda pelo rank digitado pelo usuario
+int aux;
+int achou=0;
+printf("\nInforme o rank a buscar: ");
+scanf ("%d", &aux);
+    for(int i=0;i<qt;i++) {                         //Faz laço conforme quantidade digitada pelo usuario
+        if(aux==busca[i].rank){
+            achou=1;
+            printf("\nNome: %s", busca[i].nome);
+            printf("\nEstilo: %s", busca[i].estilo);
+            printf("\nIntegrantes: %d", busca[i].tamanho);
+            printf("\nRank: %d\n", busca[i].rank);
+    }   }
+    if (achou==0)
+        printf("\nRank não encontrado");            //Mostra mensagem caso o valor digitado pelo usuario não seja encontrado no laço
+}
+
+void menu () {
+    BANDA v[TAMANHO];     //VETOR do tipo banda.
+    int op = 0, quant=0;
+    while(op!=9){           //Compara para mostrar menu novamente
+        printf("\n\n1 - Digitar Banda\n\n2 - Consultar por nome\n\n3 - Consultar por estilo\n\n4 - Consultar por numero de integrantes\n\n5 - Consultar por rank\n\n6 - Listar todas\n\n9 - Sair\n");
+        scanf("%d",&op);
+    if(quant==0 && op>1 && op<7){  //Compara se existe banda cadastrada
+         printf("\nNenhuma banda cadastrada");
+    }else{
+        switch (op) {       //Chama função por seleção digitada pelo usuario
+            case 1:
+            printf("Digite a quantidade de bandas: ");
+            scanf("%d",&quant);
+            quant=leBanda(v,quant);
+            break;
+            
+            case 2:
+                buscaPorNome(v,quant);
+            break;
+            
+            case 3:
+                buscaPorEstilo(v,quant);
+            break;
+            
+            case 4:
+                buscaPorTamanho(v,quant);
+            break;
+            
+            case 5:
+                buscaPorRank(v,quant);
+            break;
+            
+            case 6:
+                listarTodas(v,quant);
+            break;
+            
+            case 9:
+                printf("\nObrigado!!!");
+            break;
+                
+            default :
+            printf ("\nValor invalido!");
+        }
+    }
+    }        
+}
+
+int main() {
+    menu();
+    return 0;
+}
