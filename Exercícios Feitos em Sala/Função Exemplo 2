@@ -1,0 +1,17 @@
+/******************************************************************************
+Vinicius Santos Vilela - 	2AN	- 	23/02/2023
+
+Função que multiplica valor, utilizando o endereço da variavel
+    
+*******************************************************************************/
+
+#include <stdio.h>
+void funcaoExemplo ( int *a) {
+    *a = (*a) * 2;
+}
+
+int main ( ) {
+    int a = 5, resultado;
+    funcaoExemplo (&a);
+    printf ("a = %d", a);
+}
