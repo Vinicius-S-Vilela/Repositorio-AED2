@@ -1,0 +1,29 @@
+/******************************************************************************
+
+Vinicius Santos Vilela - 	2AN	- 	08/03/2023
+
+EXERCÍCIO 3
+  Leia um vetor de 10 posições. Contar e escrever quantos valores pares ele possui.
+
+*******************************************************************************/
+#include <stdio.h>
+#define TAM 10
+
+int main()
+{
+    int i, total=0;
+    int p[TAM];
+    
+    for(i=0; i<TAM;i++){
+        printf("Digite a posição p[%d]:", i);
+        scanf("%d", &p[i]);
+    }
+    for (i=0; i<TAM; i++){
+        if(p[i]%2==0) total++;
+    }
+    
+    printf("\nQuantidade de pares = %d", total);
+    
+        return 0;
+    
+}
