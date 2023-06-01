@@ -1,0 +1,28 @@
+/******************************************************************************
+Vinicius Santos Vilela - 	2AN	- 	08/03/2023
+lISTA 2 - EXERCÍCIO 5
+          Crie um programa que leia 6 valores inteiros e, em seguida, mostre na tela os
+valores lidos na ordem inversa.
+******************************************************************************/
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int i, dig[8];
+   printf("Digite 6 numeros inteiros.\n");
+
+   for(i=0; i<6; i++) {
+    printf("Digite o %d valor: ", (i+1));
+    scanf("%d", &dig[i]);
+   }
+
+   printf("Resultado: \n");
+   for(i=5; i>=0; i--) {
+   
+    printf("%d\n", dig[i]);
+   }
+   return 0;
+}
