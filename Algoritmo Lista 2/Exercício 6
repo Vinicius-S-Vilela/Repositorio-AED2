@@ -1,0 +1,32 @@
+/******************************************************************************
+Vinicius Santos Vilela - 2AN - 08/03/2023
+lISTA 2 - EXERCÍCIO 6
+       Faça um programa para ler a nota da prova de 15 alunos e armazene num vetor,
+calcule e imprima a média geral.
+
+******************************************************************************/
+
+#include <stdio.h>
+
+#define SIZE 15
+
+int main() {
+    float notas[SIZE];
+    float soma = 0.0, media;
+    int i;
+
+    // Leitura das notas dos alunos
+    printf("Digite as notas dos %d alunos:\n", SIZE);
+    for (i = 0; i < SIZE; i++) {
+        printf("Nota do aluno %d: ", i + 1);
+        scanf("%f", &notas[i]);
+        soma += notas[i];
+    }
+
+    // Cálculo da média geral
+    media = soma / SIZE;
+
+    printf("A média geral das notas é: %.2f\n", media);
+
+    return 0;
+}
